@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Friend-Finder</title>
+  <!-- Latest compiled and minified CSS & JS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://code.jquery.com/jquery.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+
+<div class="container">
+
+    <h1><span class="glyphicon glyphicon-flash"></span> Survey Questions</h1>
+    <hr>
+    <h2 id="aboutYou">About You</h2>
+
+    <form method="POST" role="form">
+
+            <div class="form-group">
+              <label for="nameInput">Name (Required)</label>
+              <input type="name" class="form-control" id="nameInput">
+            </div>
+            <div class="form-group">
+              <label for="pictureInput">Link to Photo Image (Required)</label>
+              <input type="pictureLink" class="form-control" id="pictureInput">
+            </div>
+            
+    <hr>
+
+    <h2>Question 1</h2>
+    <h4>Your mind is always buzzing with unexplored ideas and plans.</h4>
+    <select class="form-control" id="q1">
+      <option>Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+    <h2>Question 2</h2>
+    <h4>Generally speaking, you rely more on your experience than your imagination.</h4>
+    <select class="form-control" id="q2">
+      <option>Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+    <h2>Question 3</h2>
+    <h4>You find it easy to stay relaxed and focused even when there is some pressure.</h4>
+    <select class="form-control" id="q3">
+      <option>Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+    <h2>Question 4</h2>
+    <h4>You rarely do something just out of sheer curiosity.</h4>
+    <select class="form-control" id="q4">
+      <option>Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+    <h2>Question 5</h2>
+    <h4>People can rarely upset you.</h4>
+    <select class="form-control" id="q5">
+      <option>Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+    <h2>Question 6</h2>
+    <h4>It is often difficult for you to relate to other people's feelings</h4>
+    <select class="form-control" id="q6">
+      <option>Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+    <h2>Question 7</h2>
+    <h4>In a discussion, truth should be more important than people's sensitiviites.</h4>
+    <select class="form-control" id="q7">
+      <option>Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+    <h2>Question 8</h2>
+    <h4>You rarely get carried away by fantasies and ideas.</h4>
+    <select class="form-control" id="q8">
+      <option>Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+    <h2>Question 9</h2>
+    <h4>You think that everyone's views should be respected regardless of whether they are supported by facts or not.</h4>
+    <select class="form-control" id="q9">
+      <option>Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+    <h2>Question 10</h2>
+    <h4>You feel more energetic after spending time with a group of people.</h4>
+    <select class="form-control" id="q10">
+      <option>Select an Option</option>
+      <option value="1">1 (Strongly Disagree)</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5 (Strongly Agree)</option>
+    </select>
+
+    </form>
+
+    <hr>
+
+    <button class="btn btn-success btn-lg" id="submitButton" data-toggle="modal" data-target="#resultModal"><span class="glyphicon glyphicon-ok"></span> Submit</button>
+
+    <hr>
+
+    <footer class="footer">
+      <div class="container">
+        <p><a href="/api/friends">API Friends Link</a></p>
+      </div>
+    </footer>
+
+<!-- MODAL -->
+
+    <div class="modal fade" id="resultModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="exampleModalLabel">Best Match</h2>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body" id="surveyResults">
+            <h2>I'm a legend!!!</h2>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+      
+
+  </div>
+
+    <script type="text/javascript">
+
+    // JAVASCRIPT
+
+  $("#submitButton").on("click", function(event) {
+    event.preventDefault();
+
+  var answerArr = [];
+        for (i = 1; i < 11; i++) {
+            answerArr.push($("#" + ("q" + i)).val().trim());
+        };
+
+    var userResults = {
+      name: $("#nameInput").val().trim(),
+      photo: $("#pictureInput").val().trim(), 
+      scores: answerArr
+    };
+
+    console.log(userResults);
+
+  $.post("/api/friends", userResults,
+    function(data) {
+
+      if (data) {
+        alert("LETS FIND YOU A FRIEND");
+
+      // ADD UP USER SCORE 
+       
+      var userScoreTotals = userResults.scores.reduce(add, 0);
+
+      function add(a, b) {
+      return parseInt(a) + parseInt(b);
+      }
+      console.log(userScoreTotals); // 6
+      }
+
+      else {
+        alert("something isn't working")
+      }
+    });
+  });
+
+
+
+  var currentURL = window.location.origin;
+
+  // MAKE THIS PUSH THE FRIEND DATA TO THE MODAL
+  $.get("/api/friends", function(req, res) {
+
+    // LOOP THROUGH EXISTING USERS
+    for (var i = 0; i < req[i].scores; i++) {
+
+      // FIND THEIR TOTAL SCORE FROM THEIR ARRAY
+    var newFriendsScoreTotals = req.params.scores.reduce(add, 0);
+
+    function add(a, b) {
+    return parseInt(a) + parseInt(b);
+    }
+    console.log(newFriendsScoreTotals); // 6
+    }
+
+  // THEN DISPLAY INFO IN MODAL
+
+    console.log(req[i].scores)
+  });
+   
+</script>
+
+</body>
+</html>
+

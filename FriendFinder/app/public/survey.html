@@ -166,7 +166,8 @@
             </button>
           </div>
           <div class="modal-body" id="surveyResults">
-            <h2>I'm a legend!!!</h2>
+            <h2>Your Best Match!</h2>
+            <h2 id ="newFriendName"></h2>
           </div>
           <div class="modal-footer">
             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -214,36 +215,64 @@
       console.log(userScoreTotals); // 6
       }
 
+      // EVALUATE THE CLOSEST SCORES
+
+      if (newFriendsScoreTotals = userScoreTotals) {
+      alert("PERFECT MATCH!!!")
+      displayNewFriend();
+    }
       else {
         alert("something isn't working")
       }
     });
-  });
-
-
 
   var currentURL = window.location.origin;
 
-  // MAKE THIS PUSH THE FRIEND DATA TO THE MODAL
-  $.get("/api/friends", function(req, res) {
+    // GET SCORE ARRAY FROM EXISTING FRIENDS
+  $.ajax({ url: currentURL + "/api/friends", method: "GET"})
+    .then(function(friendsData) {
+      console.log(friendsData)
 
-    // LOOP THROUGH EXISTING USERS
-    for (var i = 0; i < req[i].scores; i++) {
+      for (var i = 0; i < friendsData.length; i++) {
 
-      // FIND THEIR TOTAL SCORE FROM THEIR ARRAY
-    var newFriendsScoreTotals = req.params.scores.reduce(add, 0);
+       var newFriendsScoreTotals = friendsData[i].scores.reduce(add, 0);
 
-    function add(a, b) {
-    return parseInt(a) + parseInt(b);
-    }
-    console.log(newFriendsScoreTotals); // 6
-    }
+       function add(a, b) {
+         return parseInt(a) + parseInt(b);
+       }
+       console.log(newFriendsScoreTotals)
+      }
 
-  // THEN DISPLAY INFO IN MODAL
+    })
 
-    console.log(req[i].scores)
-  });
-   
+ 
+
+  function displayNewFriend() {
+
+      var currentURL = window.location.origin;
+
+    $.ajax({ url: currentURL + "/api/friends", method: "GET"})
+    .then(function(friendsData) {
+
+      for (var i = 0; i < friendsData.length; i++) {
+        console.log(this.score)
+
+      var bestBud = friendsData[i].score = userResults.scores
+
+        if (userResults.scores = newFriendsScoreTotals) {
+
+  $("#newFriendName").append(bestBud.name)
+
+        }
+
+      }
+
+    })
+    
+}
+
+ });
+
 </script>
 
 </body>
